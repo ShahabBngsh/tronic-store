@@ -1,3 +1,6 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
 const DiscountSchema = new Schema({
   name: {
     type: String,
