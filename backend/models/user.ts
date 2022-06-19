@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt');
 
 const { isEmail } = require('validator');
 
@@ -28,20 +29,32 @@ const UserSchema = new Schema ({
     type: String,
     required: true
   },
-  orders: [{
-    type: String
-  }],
   cartId: {
-    type: String
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Cart'
   },
-  createdAt:{
-    type: Date,
-    default: Date.now()
-  },
-  modifiedAt: {
-    type: Date,
-    default: Date.now()
+  isAdmin: {
+    type: Boolean,
+    required: true,
+    default: false
   }
+},
+{
+  timestamp: true
 });
 
-module.exports = mongoose.model('user', UserSchema);
+UserSchema.methods.matchPassword = async (password) => {
+  return await bcrypt.compare(password, this.password);
+}
+
+UserSchema.pre('save', async (next) => {
+  if (!this.isModified('password')) {
+    next();
+  }
+
+  const salt = await bcrypt.genSalt(10)
+  this.password = await bcrypt.hash(this.password, salt)
+});
+
+
+module.exports = mongoose.model('User', UserSchema);
