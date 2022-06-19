@@ -42,6 +42,10 @@ const DiscountSchema = new Schema({
       type: Number,
       required: true,
       min: 1
+    },
+    isEnabled: {
+      type: Boolean,
+      default: false
     }
   },
   {
@@ -97,4 +101,5 @@ const ProductSchema = new Schema({
   timestamp: true
 })
 
-module.exports = mongoose.model('Product', ProductSchema);
+const Product = mongoose.model('Product', ProductSchema);
+export default Product;
