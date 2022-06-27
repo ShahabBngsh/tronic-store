@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 import {
@@ -11,9 +11,10 @@ import {
   deleteUser,
 } from '../controllers/userController.js';
 
-import { protect, admin } from '../middleware/authMiddleware'
+import { protect, admin } from '../middleware/authMiddleware.js'
 
-router.post('/register', signup);
+router.post('/', signup);
+router.post('/signup', signup);
 router.post('/login', login);
 
 router.route('/profile')

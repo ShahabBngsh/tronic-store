@@ -1,5 +1,5 @@
 import async from 'async';
-import Product from '../models/product';
+import Product from '../models/product.js';
 
 const getProducts = async (req, res) => {
   let products;
@@ -9,9 +9,9 @@ const getProducts = async (req, res) => {
     console.log(err);
   }
   if (!products) {
-    return res.status(204).json({ error: 'No content'});
+    return res.status(204).json({ error: 'No content' });
   } else {
-    return res.status(200).json({products})
+    return res.status(200).json({ products })
   }
 };
 
@@ -21,7 +21,7 @@ const getProductById = async (req, res) => {
   if (product) {
     res.json(product)
   } else {
-    res.status(404).json({error: 'Product not found'})
+    res.status(404).json({ error: 'Product not found' })
   }
 };
 
@@ -63,7 +63,7 @@ const updateProduct = async (req, res) => {
     const updateProduct = await product.save()
     res.json(updateProduct)
   } else {
-    res.status(404).json({error: 'Product not found'})
+    res.status(404).json({ error: 'Product not found' })
   }
 };
 
@@ -71,9 +71,9 @@ const deleteProduct = async (req, res) => {
   const product = await Product.findById(req.params.id);
   if (product) {
     await product.remove();
-    res.status(200).json({message: 'Product removed'})
+    res.status(200).json({ message: 'Product removed' })
   } else {
-    res.status(404).json({error: 'Product not found'})
+    res.status(404).json({ error: 'Product not found' })
   }
 };
 

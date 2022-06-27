@@ -1,10 +1,11 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt');
+import 'bcrypt';
 
-const { isEmail } = require('validator');
+import pkg from 'validator';
+const { isEmail } = pkg;
 
-const UserSchema = new Schema ({
+const UserSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -39,9 +40,9 @@ const UserSchema = new Schema ({
     default: false
   }
 },
-{
-  timestamp: true
-});
+  {
+    timestamp: true
+  });
 
 UserSchema.methods.matchPassword = async (password) => {
   return await bcrypt.compare(password, this.password);
@@ -57,4 +58,5 @@ UserSchema.pre('save', async (next) => {
 });
 
 
-module.exports = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
+export default User;

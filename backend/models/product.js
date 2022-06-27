@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const ReviewSchema = new Schema({
@@ -20,34 +20,34 @@ const ReviewSchema = new Schema({
     ref: 'User'
   }
 },
-{
-  timestamp: true
-});
+  {
+    timestamp: true
+  });
 
 const DiscountSchema = new Schema({
-    name: {
-      type: String,
-      required: true
-    },
-    desc: {
-      type: String
-    },
-    percentage: {
-      type: Number,
-      required: true,
-      min: 1,
-      max: 99
-    },
-    endsInDays: {
-      type: Number,
-      required: true,
-      min: 1
-    },
-    isEnabled: {
-      type: Boolean,
-      default: false
-    }
+  name: {
+    type: String,
+    required: true
   },
+  desc: {
+    type: String
+  },
+  percentage: {
+    type: Number,
+    required: true,
+    min: 1,
+    max: 99
+  },
+  endsInDays: {
+    type: Number,
+    required: true,
+    min: 1
+  },
+  isEnabled: {
+    type: Boolean,
+    default: false
+  }
+},
   {
     timestamp: true
   });
@@ -97,9 +97,9 @@ const ProductSchema = new Schema({
     type: DiscountSchema
   }
 },
-{
-  timestamp: true
-})
+  {
+    timestamp: true
+  })
 
 const Product = mongoose.model('Product', ProductSchema);
 export default Product;
