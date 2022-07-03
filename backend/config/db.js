@@ -11,6 +11,7 @@ const connectDb = async () => {
       useNewUrlParser: true,
     })
     console.log(`mongodb connected: ${conn.connection.host}`)
+    // console.log(`db: ${conn.connection.db}`)
   } catch (err) {
     console.log(`ERROR: ${err.message}`)
     process.exit(1)

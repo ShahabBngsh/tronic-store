@@ -4,7 +4,7 @@ import Product from '../models/product.js';
 const getProducts = async (req, res) => {
   let products;
   try {
-    products = await Product.find().limit(2);
+    products = await Product.find({});
   } catch (err) {
     console.log(err);
   }
