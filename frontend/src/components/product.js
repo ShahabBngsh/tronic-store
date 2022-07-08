@@ -1,6 +1,6 @@
-import { Card } from "@mui/material"
+import Card from "react-bootstrap/Card";
 import React from "react"
-// import { useNavigate } from "react-router-dom"
+import * as Icon from "react-bootstrap-icons"
 
 const Product = (props) => {
   const {
@@ -19,12 +19,21 @@ const Product = (props) => {
   } = props.product;
 
   return (
-    <div>
-      {/* <Card> */}
-      <h3>{props.product.name}</h3>
-      <h4>{price}</h4>
-      {/* </Card> */}
-    </div>
+    <Card className="shadow-sm">
+      <Card.Img variant="top" src="./assets/mouse.png" />
+      <Card.Body>
+        <hr class="mt-2 mb-3" />
+        <Card.Title><h6>{name}</h6></Card.Title>
+        <div>
+          <Icon.StarFill />
+          <Icon.StarFill />
+          <Icon.StarFill />
+          <Icon.StarFill />
+          <Icon.Star />
+        </div>
+        <Card.Text><h4>$<b>{price}</b></h4></Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 
