@@ -1,11 +1,16 @@
 import Button from "react-bootstrap/Button"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Rating from "./rating"
+
+
 const ProductInfo = (props) => {
   return (
     <>
       <h4>{props.name}</h4>
       <h6>{props.category}</h6>
+      <Rating rating={props.rating} numReviews={props.numReviews} />
+
       <h3 className="mt-4">${props.price}</h3>
       <Row>
         <Col className="d-grid gap-2 col-6 mb-2">
