@@ -1,13 +1,14 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import NavBar from './components/navbar'
 import Products from './components/products'
 import ProductDetail from './components/product-detail'
 
 function App() {
   return (
     <React.Fragment>
-      <header>
-        <div>works</div>
+      <header className="mx-4">
+        <NavBar />
       </header>
       <main>
         <Routes>
