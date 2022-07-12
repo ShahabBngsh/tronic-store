@@ -1,8 +1,11 @@
 import Card from "react-bootstrap/Card";
-import React from "react"
+import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import * as Icon from "react-bootstrap-icons"
+import ProductDetail from "./product-detail";
 
 const Product = (props) => {
+  const navigateTo = useNavigate();
   const {
     _id,
     user,
@@ -18,11 +21,17 @@ const Product = (props) => {
     discount,
   } = props.product;
 
+  function handleClick() {
+    //navigate to productdetail
+    console.log(_id)
+    navigateTo('/products/' + _id)
+  }
+
   return (
-    <Card className="shadow-sm">
+    <Card className="shadow-sm" onClick={handleClick}>
       <Card.Img variant="top" src="./assets/mouse.png" />
       <Card.Body>
-        <hr class="mt-2 mb-3" />
+        <hr className="mt-2 mb-3" />
         <Card.Title><h6>{name}</h6></Card.Title>
         <div>
           <Icon.StarFill />

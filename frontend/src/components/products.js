@@ -19,11 +19,11 @@ const Products = () => {
   console.log(products);
 
   return (
-    <div class="">
-      <ul class="container row">
+    <div>
+      <ul className="container row">
         {
           products && products.map((product, i) => (
-            <div key={i} class="col-xs-6 col-sm-4 col-sm-4 mb-4">
+            <div key={i} className="col-xs-6 col-sm-4 col-sm-4 mb-4">
               <Product product={product} />
             </div>
           ))
