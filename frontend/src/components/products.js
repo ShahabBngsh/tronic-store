@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react'
 
 import Product from './product'
 
-// import { createProxyMiddlewre } from 'http-proxy-middleware'
-
 const URL = "http://localhost:4000/api/products/"
 
 const fetchHandler = async () => {

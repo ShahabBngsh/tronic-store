@@ -29,7 +29,7 @@ const ProductDetail = (props) => {
   return (
     <Container className="container mx-4">
       <Row>
-        <Col>path to file</Col>
+        <Col> path > to > file</Col>
       </Row>
       <Row>
         <Col>
@@ -39,7 +39,13 @@ const ProductDetail = (props) => {
           <ProductInfo name={product?.name} category={product?.category} price={product?.price} rating={product?.rating} numReviews={product?.numReviews} />
         </Col>
       </Row>
-      {/* <Image className="thumbnail" src="https://m.media-amazon.com/images/I/81ef5sbZznL._AC_SL1500_.jpg" /> */}
+
+      <h5 className="mt-4">About this Item</h5>
+      <Row>
+        <Col>
+          {product?.description}
+        </Col>
+      </Row>
     </Container>
   )
 }
