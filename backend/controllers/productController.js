@@ -15,6 +15,15 @@ const getProducts = async (req, res) => {
   }
 };
 
+const getTop3Products = async (req, res) => {
+  const products = await Product.find({}).sort({ numReviews: -1 }).limit(3)
+  if (products) {
+    res.json(products);
+  } else {
+    res.status(400).json({ error: 'getTop3products error' });
+  }
+}
+
 const getProductById = async (req, res) => {
   const product = await Product.findById(req.params.id);
 
@@ -80,6 +89,7 @@ const deleteProduct = async (req, res) => {
 
 export {
   getProducts,
+  getTop3Products,
   getProductById,
   createProduct,
   updateProduct,
