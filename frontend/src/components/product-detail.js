@@ -33,7 +33,7 @@ const ProductDetail = (props) => {
       </Row>
       <Row>
         <Col>
-          <Image src="https://m.media-amazon.com/images/I/81ef5sbZznL._AC_SL1500_.jpg" alt="just an image" />
+          <Image src={product?.image} alt="item image" />
         </Col>
         <Col className="m-2 p-2">
           <ProductInfo name={product?.name} category={product?.category} price={product?.price} rating={product?.rating} numReviews={product?.numReviews} />
