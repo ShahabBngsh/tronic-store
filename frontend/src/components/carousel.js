@@ -25,7 +25,7 @@ const Carousel = (props) => {
 
   return (
     <div className={["d-flex justify-content-center"]}>
-      <CarouselBS id={style.carousel} className={[style.w500]} indicators={true}>
+      <CarouselBS id={style.carousel} className={[style.w500, style.h400]} indicators={true}>
         <CarouselBS.Item >
           <img
             className={style.image}

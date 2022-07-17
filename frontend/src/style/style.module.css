@@ -7,6 +7,10 @@
   width: 500px;
 }
 
+.h400 {
+  height: 400px;
+}
+
 #carousel div button {
   background-color: #cccfd1 !important;
 }
