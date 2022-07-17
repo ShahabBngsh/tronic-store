@@ -6,3 +6,11 @@
 .w500 {
   width: 500px;
 }
+
+#carousel div button {
+  background-color: #cccfd1 !important;
+}
+
+#carousel a span {
+  background-color: #E7E9EB !important;
+}
