@@ -28,7 +28,7 @@ const Product = (props) => {
 
   return (
     <Card className="shadow-sm" onClick={handleClick}>
-      <Card.Img variant="top" src={image} />
+      <Card.Img variant="top" src={image} className="p-4" />
       <Card.Body>
         <hr className="mt-2 mb-3" />
         <Card.Title><h6>{name}</h6></Card.Title>
