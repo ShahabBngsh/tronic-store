@@ -60,8 +60,11 @@ const OrderSchema = new Schema({
   deliveredAt: {
     type: Date
   }
-  
+
 },
-{
-  timestamp: true
-})
+  {
+    timestamp: true
+  })
+
+const Order = mongoose.model('Order', OrderSchema);
+export default Order;
