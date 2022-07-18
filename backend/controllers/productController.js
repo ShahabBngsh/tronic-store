@@ -86,6 +86,21 @@ const deleteProduct = async (req, res) => {
   }
 };
 
+const getCategories = async (req, res) => {
+  console.log('getCategories')
+  Product.aggregate()
+    .group({
+      "_id": "$category",
+      "Categories": { "$addToSet": "$image" }
+    })
+    .exec(function (err, result) {
+      if (err) {
+        console.log(err);
+        res.status(400).json({ "error": err })
+      }
+      res.json(result)
+    });
+}
 
 export {
   getProducts,
@@ -93,5 +108,6 @@ export {
   getProductById,
   createProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
+  getCategories,
 }
