@@ -1,4 +1,5 @@
 import * as Icon from "react-bootstrap-icons"
+
 const Rating = (props) => {
   const filledStars = Math.floor(props.rating)
   const ceil = Math.ceil(props.rating)

@@ -1,12 +1,14 @@
 
 import Carousel from './carousel'
+import Categories from './categories'
 
 const HomeScreen = () => {
   const URL = 'http://localhost:4000/api/products'
   return (
     <>
-      {/* <div>Works</div> */}
       <Carousel URL={URL} />
+      <Categories URL={URL} />
+
     </>
   )
 }

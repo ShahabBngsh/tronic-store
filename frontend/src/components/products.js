@@ -14,7 +14,6 @@ const Products = () => {
   useEffect(() => {
     fetchHandler().then((data) => setProducts(data.products));
   }, []);
-  console.log(products);
 
   return (
     <div>
