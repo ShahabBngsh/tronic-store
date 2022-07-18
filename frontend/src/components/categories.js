@@ -10,23 +10,23 @@ const fetchHandler = async (url) => {
 
 const Categories = (props) => {
 
-  const URL = props.URL;
+  const URL = props.URL + "/getCategories";
   const [cats, setCats] = useState();
   useEffect(() => {
-    fetchHandler(URL).then(data => setCats(data.products));
+    fetchHandler(URL).then(data => setCats(data));
   }, []);
+
   if (typeof cats === 'undefined') {
     return null;
   }
-  // console.log(cats);
   return (
     <>
-      <h5>Categories</h5>
+      <h5 className="px-4">Categories</h5>
       <ul className="container row">
         {
           cats && cats.map((cat, i) => (
             <div key={i} className="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 mb-4">
-              <Category name={cat.name} image={cat.image} />
+              <Category name={cat._id} image={cat.Categories[0]} />
             </div>
           ))
         }
