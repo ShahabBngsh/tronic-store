@@ -19,7 +19,7 @@ const Rating = (props) => {
         {icons}
       </span>
       <span className="mx-3">
-        {props.numReviews} ratings
+        {props.numReviews} reviews
       </span>
     </div>
   )
