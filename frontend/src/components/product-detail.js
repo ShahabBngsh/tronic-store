@@ -26,6 +26,11 @@ const ProductDetail = (props) => {
     fetchHandler();
   }, [id])
   // console.log(details);
+
+  if (typeof product === 'undefined') {
+    return null;
+  }
+
   return (
     <Container className="container mx-4">
       <Row>
@@ -36,7 +41,7 @@ const ProductDetail = (props) => {
           <Image src={product?.image} alt="item image" />
         </Col>
         <Col className="m-2 p-2">
-          <ProductInfo name={product?.name} category={product?.category} price={product?.price} rating={product?.rating} numReviews={product?.numReviews} />
+          <ProductInfo name={product?.name} category={product?.category} price={product?.price} rating={product?.rating} numReviews={product?.numReviews} currentStock={product?.currentStock} />
         </Col>
       </Row>
 
