@@ -2,22 +2,24 @@ import Card from "react-bootstrap/Card";
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Rating from "./rating";
+import CountInStock from './count-in-stock'
 
 const Product = (props) => {
   const navigateTo = useNavigate();
   const {
     _id,
-    user,
+    // user,
     name,
-    desc,
+    // desc,
     image,
     price,
-    quantity,
-    reviews,
+    // quantity,
+    // reviews,
+    countInStock,
     rating,
     numReviews,
-    category,
-    discount,
+    // category,
+    // discount,
   } = props.product;
 
   function handleClick() {
@@ -34,6 +36,7 @@ const Product = (props) => {
         <Card.Title><h6>{name}</h6></Card.Title>
         <Rating rating={rating} numReviews={numReviews} />
         <Card.Text><h4>$<b>{price}</b></h4></Card.Text>
+        <CountInStock count={countInStock} />
       </Card.Body>
     </Card>
   );
