@@ -11,6 +11,10 @@
   height: 400px;
 }
 
+.decorenone {
+  text-decoration: none;
+}
+
 #carousel div button {
   background-color: #cccfd1 !important;
 }

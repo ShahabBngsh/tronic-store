@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -6,6 +7,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import * as Icon from 'react-bootstrap-icons';
+import style from '../style/style.module.css'
+
 
 function NavBar() {
   const expand = "md"
@@ -14,7 +17,7 @@ function NavBar() {
     <>
       <Navbar bg="light" expand={expand} className="mb-3">
         <Container fluid>
-          <Navbar.Brand href="#">Tronic Store</Navbar.Brand>
+          <Navbar.Brand ><Link className={[style.decorenone, "text-dark"].join(" ")} to="/">Tronic Store</Link></Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-${expand}`}
@@ -37,11 +40,11 @@ function NavBar() {
                 <Button variant="outline-dark">Search</Button>
               </Form>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#action1">
+                <Nav.Link href="/">
                   <Icon.Cart3 />
                 </Nav.Link>
-                <Nav.Link href="#action2">$ 0.0 </Nav.Link>
-                <Nav.Link href="#action1">
+                <Nav.Link href="/">$ 0.0 </Nav.Link>
+                <Nav.Link href="/">
                   <Icon.Heart />
                 </Nav.Link>
                 <NavDropdown
