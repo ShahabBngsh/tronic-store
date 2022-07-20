@@ -15,7 +15,7 @@ const Product = (props) => {
     price,
     // quantity,
     // reviews,
-    countInStock,
+    currentStock,
     rating,
     numReviews,
     // category,
@@ -36,7 +36,7 @@ const Product = (props) => {
         <Card.Title><h6>{name}</h6></Card.Title>
         <Rating rating={rating} numReviews={numReviews} />
         <Card.Text><h4>$<b>{price}</b></h4></Card.Text>
-        <CountInStock count={countInStock} />
+        <CountInStock count={currentStock} />
       </Card.Body>
     </Card>
   );
