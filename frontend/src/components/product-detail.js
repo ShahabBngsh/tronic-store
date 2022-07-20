@@ -40,7 +40,7 @@ const ProductDetail = (props) => {
         <Col className="col-12 col-md-6">
           <Image src={product?.image} alt={product?.name} />
         </Col>
-        <Col className="col-12 col-md-4 p-2">
+        <Col className="col-12 col-md-6 p-2">
           <ProductInfo name={product?.name} category={product?.category} price={product?.price} rating={product?.rating} numReviews={product?.numReviews} currentStock={product?.currentStock} />
         </Col>
       </Row>

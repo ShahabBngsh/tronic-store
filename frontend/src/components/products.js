@@ -17,10 +17,10 @@ const Products = () => {
 
   return (
     <div>
-      <ul className="container row">
+      <ul className="row px-4">
         {
           products && products.map((product, i) => (
-            <div key={i} className="col-xs-6 col-sm-6 col-lg-4 mb-4">
+            <div key={i} className="col-xs-6 col-sm-4 col-lg-2 mb-4">
               <Product product={product} />
             </div>
           ))
