@@ -32,15 +32,15 @@ const ProductDetail = (props) => {
   }
 
   return (
-    <Container className="container mx-4">
+    <Container className="container mx-2">
       <Row>
         <Col> path > to > file</Col>
       </Row>
       <Row>
-        <Col>
-          <Image src={product?.image} alt="item image" />
+        <Col className="col-12 col-md-6">
+          <Image src={product?.image} alt={product?.name} />
         </Col>
-        <Col className="m-2 p-2">
+        <Col className="col-12 col-md-4 p-2">
           <ProductInfo name={product?.name} category={product?.category} price={product?.price} rating={product?.rating} numReviews={product?.numReviews} currentStock={product?.currentStock} />
         </Col>
       </Row>
