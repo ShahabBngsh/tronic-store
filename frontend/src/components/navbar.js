@@ -12,7 +12,7 @@ import style from '../style/style.module.css'
 
 function NavBar() {
   const expand = "md"
-  const dd = <Icon.Person />
+  const dd = <Icon.Person size={30} />
   return (
     <>
       <Navbar bg="light" expand={expand} className="mb-3">
@@ -26,7 +26,7 @@ function NavBar() {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                Offcanvas
+                Welcom to Tronic Store
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
@@ -41,11 +41,11 @@ function NavBar() {
               </Form>
               <Nav className="justify-content-end flex-grow-1 pe-3">
                 <Nav.Link href="/">
-                  <Icon.Cart3 />
+                  <Icon.Cart3 size={28} />
                 </Nav.Link>
                 <Nav.Link href="/">$ 0.0 </Nav.Link>
                 <Nav.Link href="/">
-                  <Icon.Heart />
+                  <Icon.Heart size={28} />
                 </Nav.Link>
                 <NavDropdown
                   title={dd}

@@ -26,7 +26,7 @@ const signup = async (req, res) => {
     res.status(400).json({ error: 'User already exists' })
   }
 
-  const user = await User.creat({ name, email, password })
+  const user = await User.create({ name, email, password })
 
   if (user) {
     res.status(201).json({

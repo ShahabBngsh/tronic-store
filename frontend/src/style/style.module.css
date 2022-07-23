@@ -3,6 +3,14 @@
   max-height: 400px;
 }
 
+.w50 {
+  width: 50px;
+}
+
+.h50 {
+  height: 50px;
+}
+
 .w500 {
   width: 500px;
 }
