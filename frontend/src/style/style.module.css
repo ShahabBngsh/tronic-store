@@ -3,6 +3,10 @@
   max-height: 400px;
 }
 
+.mw400 {
+  max-width: 400px;
+}
+
 .w50 {
   width: 50px;
 }

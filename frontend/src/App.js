@@ -4,6 +4,7 @@ import NavBar from './components/navbar'
 import Products from './components/products'
 import ProductDetail from './components/product-detail'
 import HomeScreen from './components/home-screen'
+import SignUp from './components/signup'
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
         <Routes>
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetail />} />
-          <Route path="/" element={<HomeScreen />} />
-          {/* <Route path="/" component={Product} /> */}
+          <Route path="/homescreen" element={<HomeScreen />} />
+          <Route path="/" element={<SignUp />} />
         </Routes>
       </main>
     </React.Fragment>
