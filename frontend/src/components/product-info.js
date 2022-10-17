@@ -8,6 +8,7 @@ import CountInStock from "./count-in-stock"
 
 const ProductInfo = (props) => {
   const [btnDisabled, setBtnDisabled] = useState(false);
+  // eslint-disable-next-line
   useEffect(() => {
     setBtnDisabled(props.currentStock < 1 ? true : false);
   })
