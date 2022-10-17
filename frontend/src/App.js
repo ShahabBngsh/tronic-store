@@ -16,8 +16,8 @@ function App() {
         <Routes>
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetail />} />
-          <Route path="/homescreen" element={<HomeScreen />} />
-          <Route path="/" element={<SignUp />} />
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </main>
     </React.Fragment>
