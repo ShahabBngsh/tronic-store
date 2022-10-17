@@ -7,7 +7,7 @@ const Rating = (props) => {
   for (var i = 0; i < Math.min(filledStars, 5); i++) {
     icons.push(<Icon.StarFill className="mx-1" />)
   }
-  if (filledStars != ceil) {
+  if (filledStars !== ceil) {
     icons.push(<Icon.StarHalf className="mx-1" />)
   }
   for (let j = ceil; j < 5; j++) {
