@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
-import style from '../style/style.module.css'
 const Category = (props) => {
   // console.log(props.image)
   return (
