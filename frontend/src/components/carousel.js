@@ -1,12 +1,14 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import CarouselBS from 'react-bootstrap/Carousel'
 
 import style from '../style/style.module.css'
 
 const Carousel = (props) => {
   const [products, setProducts] = useState();
-  const URL = props.URL + '/getTop3Products';
+  const URL = useMemo(() => {
+    return this.props.URL + '/getTop3Products';
+  }, []);
 
   useEffect(() => {
     (async () => {
@@ -17,7 +19,7 @@ const Carousel = (props) => {
           setProducts(data)
         })
     })();
-  }, []);
+  }, [URL]);
 
   if (typeof products === 'undefined') {
     return null;
