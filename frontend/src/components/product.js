@@ -1,5 +1,5 @@
 import Card from "react-bootstrap/Card";
-import React, { useState } from "react"
+import React from "react"
 import { useNavigate } from "react-router-dom"
 import Rating from "./rating";
 import CountInStock from './count-in-stock'
