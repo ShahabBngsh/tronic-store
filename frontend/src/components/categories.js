@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import axios from "axios";
 
 import Category from "./category"
@@ -9,12 +9,14 @@ const fetchHandler = async (url) => {
 }
 
 const Categories = (props) => {
-
-  const URL = props.URL + "/getCategories";
+  const URL = useMemo(() => {
+    return this.props.URL + "/getCategories";
+  }, []);
+  
   const [cats, setCats] = useState();
   useEffect(() => {
     fetchHandler(URL).then(data => setCats(data));
-  }, []);
+  }, [URL]);
 
   if (typeof cats === 'undefined') {
     return null;
