@@ -10,10 +10,9 @@ import Col from "react-bootstrap/Col"
 const ProductDetail = (props) => {
   const [product, setProduct] = useState();
   const id = useParams().id
-  const URL = `http://localhost:4000/api/products/${id}`;
-  console.log(URL)
 
   useEffect(() => {
+    const URL = `http://localhost:4000/api/products/${id}`;
     const fetchHandler = async () => {
       await axios
         .get(URL)
